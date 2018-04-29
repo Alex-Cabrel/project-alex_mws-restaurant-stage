@@ -10,31 +10,7 @@
   <link rel="stylesheet" href="css/styles.min.css" type="text/css">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <title>Restaurant Reviews</title>
-<script>
-    /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
-(function( w ){
-	var loadJS = function( src, cb ){
-		"use strict";
-		var ref = w.document.getElementsByTagName( "script" )[ 0 ];
-		var script = w.document.createElement( "script" );
-		script.src = src;
-		script.async = true;
-		ref.parentNode.insertBefore( script, ref );
-		if (cb && typeof(cb) === "function") {
-			script.onload = cb;
-		}
-		return script;
-	};
-	// commonjs
-	if( typeof module !== "undefined" ){
-		module.exports = loadJS;
-	}
-	else {
-		w.loadJS = loadJS;
-	}
-}( typeof global !== "undefined" ? global : this ));
 
-</script>
 </head>
 
 <body>
@@ -85,6 +61,10 @@
   <!-- Database helpers -->
   <script async defer type="application/javascript" charset="utf-8" src="js/dbhelper.min.js"></script>
   <!-- Main javascript file -->
+    <script async defer type="application/javascript" charset="utf-8" src="js/main.js"></script>
+
+
+  <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDUS8tjDBZomHsU55JZx6hg01Ilz4ozaQ&libraries=places&callback=initMap"></script>
 
   <!-- End scripts -->
