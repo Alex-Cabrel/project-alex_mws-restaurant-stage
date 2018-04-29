@@ -22,7 +22,7 @@ Make sure node is installed.
 
 ### Step 1
 Go to the project Folder using this command:
-# `cd projectFolder`
+#### `cd projectFolder`
 
 ### Step 2
 Install Dependencies using this command:
