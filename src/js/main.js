@@ -7,10 +7,9 @@ var markers = [];
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
-    
 });
 
 /**
@@ -76,6 +75,8 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize Google map, called from HTML.
  */
 window.initMap = () => {
+  fetchNeighborhoods();
+  fetchCuisines();
   //const gmap = document.getElementById("map");
   //gmap.onclick = null;
     
