@@ -10,7 +10,7 @@ var markers = [];
 document.addEventListener("DOMContentLoaded", (event) => {
   fetchNeighborhoods();
   fetchCuisines();
-    updateRestaurants();
+    
 });
 
 /**
@@ -89,12 +89,8 @@ window.initMap = () => {
     scrollwheel: false, 
     format: 'jpg'
   });
- var marker = new google.maps.Marker({
-    position: loc,
-    map: map
-  })
-    
-  addMarkersToMap();
+    updateRestaurants();
+  
 };
 
 
@@ -144,7 +140,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
-  
+  addMarkersToMap();
 }
 
 /**

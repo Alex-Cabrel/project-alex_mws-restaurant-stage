@@ -7,7 +7,7 @@
   <link rel='manifest' href='manifest.json'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.min.css" type="text/css">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <title>Restaurant Reviews</title>
 <script>
@@ -50,7 +50,9 @@
 
   <!-- Main section begins here -->
   <main id="maincontent" role="main">
-    
+    <section id="map-container" role="application">
+      <div id="map" aria-label="Map of location"></div>
+    </section>
     <section>
         <!-- <div class="card">
         <img class="first-img" id="first-img" src="img/first-img.jpg" alt="A restaurant's image">
@@ -71,55 +73,20 @@
         <ul id="restaurants-list" role="list"></ul>
       </div>
     </section>
-      <section id="map-container" role="application">
-      <div id="map" aria-label="Map of location"></div>
-    </section>
+      
   </main>
   <!-- Main section ends here-->
 
   <!-- Beginning scripts -->
-    <script type="application/javascript" src="js/lazy-load.js"></script>
+    <script type="application/javascript" src="js/lazy-load.min.js"></script>
 
-    <script type="application/javascript" charset="utf-8" src="js/sw_loader.js"></script>
+    <script type="application/javascript" charset="utf-8" src="js/sw_loader.min.js"></script>
   
   <!-- Database helpers -->
-  <script async defer type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script async defer type="application/javascript" charset="utf-8" src="js/dbhelper.min.js"></script>
   <!-- Main javascript file -->
-  <script async defer type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDUS8tjDBZomHsU55JZx6hg01Ilz4ozaQ&libraries=places&callback=initMap"></script>
 
-
-  <!-- Google Maps -->
-  <script>
-    function google_maps_lazyload(api_key) {
-  'use strict'
-
-  if (api_key) {
-    var options = {
-      rootMargin: '400px',
-      threshold: 0
-    }
-
-    var map = document.getElementById('map')
-
-    var observer = new IntersectionObserver(
-      function(entries, observer) {
-        // Detect intersection https://calendar.perfplanet.com/2017/progressive-image-loading-using-intersection-observer-and-sqip/#comment-102838
-        var isIntersecting = typeof entries[0].isIntersecting === 'boolean' ? entries[0].isIntersecting : entries[0].intersectionRatio > 0
-        if (isIntersecting) {
-          loadJS('https://maps.googleapis.com/maps/api/js?callback=initMap&key=' + api_key )
-          observer.unobserve(map)
-        }
-      },
-      options
-    )
-
-    observer.observe(map)
-  }
-}
-
-google_maps_lazyload("AIzaSyCDUS8tjDBZomHsU55JZx6hg01Ilz4ozaQ")
-
-</script>
   <!-- End scripts -->
 
   <!-- Beginning footer -->
